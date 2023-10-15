@@ -14,7 +14,7 @@ int isEmpty(){
 }
 
 int isFull(){
-    return (size > MAX);
+    return (size > MAX-1);
 }
 
 int enqueue(int data){
