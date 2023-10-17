@@ -43,33 +43,27 @@ void dequeue(){
 }
 
 void display(){
-    if (front == -1)
-    {
-        printf("\nQueue is Empty");
-        return;
+    int i = front;
+    while(i != rear){
+        printf("%d ", queue[i]);
+        if(i == MAX -1){
+            i = 0;
+        }
+        i++;
     }
-    printf("\nElements in Circular Queue are: ");
-    if (rear >= front)
-    {
-        for (int i = front; i <= rear; i++)
-            printf("%d ",queue[i]);
-    }
-    else
-    {
-        for (int i = front; i < size; i++)
-            printf("%d ", queue[i]);
- 
-        for (int i = 0; i <= rear; i++)
-            printf("%d ", queue[i]);
-    }
+    printf("%d ", queue[i]);
 }
 
 void main(){
     enqueue();
     enqueue();
     enqueue();
-    dequeue();
-    dequeue();
-    dequeue();
-    dequeue();
+    enqueue();
+    enqueue();
+    enqueue();
+    enqueue();
+    enqueue();
+    enqueue();
+    enqueue();
+    display();
 }
