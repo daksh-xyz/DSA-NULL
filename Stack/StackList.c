@@ -9,7 +9,7 @@ struct Stack{
 void Push(){
     struct Stack *NewNode = (struct Stack*)malloc(sizeof(struct Stack));
     if(NewNode == NULL){
-        printf("Stack Overflow!");
+        printf("no memory!");
         return;
     }
     printf("Enter data: ");

@@ -2,31 +2,25 @@
 #define MAX 10
 
 int queue[MAX];
-unsigned int size = 0;
 int front = -1, rear = -1;
 
-void enqueue(){
-    int data;
-    printf("Enter data: ");
-    scanf("%d", &data);
+void enqueue(int data){
     if ((front == 0 && rear == MAX-1) || ((rear+1) % MAX == front)){
         printf("\nQueue is Full");
         return;
     }else if (front == -1){
         front = rear = 0;
-        queue[rear] = data;
     }else if (rear == MAX-1 && front != 0){
         rear = 0;
-        queue[rear] = data;
     }else{
         rear++;
-        queue[rear] = data;
     }     
+    queue[rear] = data;
 }
 
 void dequeue(){
     if(front == -1){
-        printf("queue is empty !");
+        printf("\nqueue is empty !");
         return;
     }
     int data = queue[front];
@@ -39,31 +33,40 @@ void dequeue(){
         front++;
     }
     printf("\nData => %d", data);
-    size--;
 }
 
-void display(){
-    int i = front;
-    while(i != rear){
-        printf("%d ", queue[i]);
-        if(i == MAX -1){
-            i = 0;
-        }
-        i++;
-    }
-    printf("%d ", queue[i]);
-}
+// void display(){
+//     int i = front;
+//     while(i != rear){
+//         printf("%d ", queue[i]);
+//         if(i == MAX -1){
+//             i = 0;
+//         }
+//         i++;
+//     }
+//     printf("%d ", queue[i]);
+// }
 
 void main(){
-    enqueue();
-    enqueue();
-    enqueue();
-    enqueue();
-    enqueue();
-    enqueue();
-    enqueue();
-    enqueue();
-    enqueue();
-    enqueue();
-    display();
+    enqueue(5);
+    enqueue(1);
+    enqueue(2);
+    enqueue(6);
+    enqueue(7);
+    enqueue(22);
+    enqueue(12);
+    enqueue(34);
+    enqueue(67);
+    enqueue(45);
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
 }

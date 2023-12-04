@@ -28,7 +28,7 @@ int enqueue(int data){
         rear->next = newNode;
     }
     rear = newNode;
-    if(front == NULL){
+    if(front == NULL){ //If empty list update front to rear
         front = rear;
     }
     size++;

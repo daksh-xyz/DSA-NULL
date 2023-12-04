@@ -9,12 +9,6 @@ void main(){
     }
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-            printf("%d ", result[i][j]);
-        }
-        printf("\n");
-    }
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
             int temp = 0, k = 0;
             while(k<3){
                 temp += arr1[i][k]*arr2[k][j];
